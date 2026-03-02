@@ -1,0 +1,36 @@
+module fp_benchmark_top(
+    input clk  // Only the clock needs a physical pin
+    );
+    
+    // Internal signals (no physical pins needed)
+    wire [31:0] a;
+    wire a_valid;
+    wire [31:0] b;
+    wire b_valid;
+    wire [31:0] res;
+    wire res_valid;
+    
+    // VIO to drive inputs and monitor outputs
+    vio_1 my_vio (
+        .clk(clk),
+        .probe_out0(a),        // Drive operand A
+        .probe_out1(a_valid),  // Drive A valid
+        .probe_out2(b),        // Drive operand B
+        .probe_out3(b_valid),  // Drive B valid
+        .probe_in0(res),       // Monitor result
+        .probe_in1(res_valid)  // Monitor result valid
+    );
+    
+    // Floating-point multiplier
+    floating_point_0 my_ieee_multiplier (
+        .aclk(clk),
+        .s_axis_a_tdata(a),
+        .s_axis_a_tvalid(a_valid),
+        .s_axis_b_tdata(b),
+        .s_axis_b_tvalid(b_valid),
+        .m_axis_result_tdata(res),
+        .m_axis_result_tvalid(res_valid),
+        .m_axis_result_tready(1'b1)  // Always ready
+    );
+    
+endmodule
