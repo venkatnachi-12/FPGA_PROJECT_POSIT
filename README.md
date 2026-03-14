@@ -30,8 +30,12 @@ The multiplier is designed in three distinct pipeline stages to maximize through
 The following results were obtained after Synthesis and Implementation in Vivado for the `xc7a35tcpg236-1`.
 
 ### Timing & Performance
- **Max Frequency** = 542.59 MHz 
- **WNS (Worst Negative Slack)** 8.157 ns
+The following performance metrics were achieved after implementation:
+
+| Metric | Value |
+| :--- | :--- |
+| **Max Frequency** | 542.59 MHz |
+| **WNS (Worst Negative Slack)** | 8.157 ns |
 
 ### Resource Utilization
 The following resources were utilized on the **Artix-7 (xc7a35tcpg236-1)**:
