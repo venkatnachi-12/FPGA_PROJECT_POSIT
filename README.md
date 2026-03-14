@@ -34,9 +34,11 @@ The following results were obtained after Synthesis and Implementation in Vivado
  **WNS (Worst Negative Slack)** 8.157 ns
 
 ### Resource Utilization
-| Resource | Used | Available | Utilization % |
+The following resources were utilized on the **Artix-7 (xc7a35tcpg236-1)**:
 
-| **LUT** | 2207 | 20800 |10.61 % |
+| Resource | Used | Available | Utilization % |
+| :--- | :--- | :--- | :--- |
+| **LUT** | 2207 | 20800 | 10.61% |
 | **FF** | 2492 | 41600 | 5.99% |
 | **DSP** | 4 | 90 | 4.44% |
 | **IOB** | 1 | 106 | 0.94% |
